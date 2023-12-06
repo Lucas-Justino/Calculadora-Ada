@@ -4,7 +4,7 @@ function lerNumero(){
     while(isNaN(valor) || valor === "" || valor.trim() === ""){ //VERIFICAÇÃO PARA ACEITAR APENAS NÚMEROS, O TRIM USADO PARA REMOVER TODOS OS ESPAÇOS DA ENTRADA
         valor = prompt("Valor incorreto! Digite novamente:")
     }
-    return valor;
+    return parseFloat(valor);
 }
 
 function lerOperacao(){
