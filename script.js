@@ -18,6 +18,19 @@ function lerOperacao(){
     return operacao;
 }
 
+
+//função criada para aparecer os valores e resultado no corpo da página, ficando mais fácil a visualização 
+// e evitando usar o CONSOLE para visualização do cálculo
+function escreve(numero) {
+    let output = document.querySelector('#output')
+    output.innerHTML = numero; 
+}
+
+function escreverOperacao(numero1, operacao, numero2, resultado) {
+    operacaoTotal = numero1 + ' ' + operacao + ' ' + numero2 + ' = ' + resultado;
+    escreve(operacaoTotal);
+}
+
 function calcular(){
     let numero1 = lerNumero();
     let operacao = lerOperacao();
@@ -57,6 +70,8 @@ function calcular(){
             console.log("Operacao Inválida");
             break;
     }
+
+    escreverOperacao(numero1, operacao, numero2, resultado)
     return resultado;
 }
 
