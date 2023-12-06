@@ -43,11 +43,13 @@ function calcular(){
             break;
 
         case "-":
+            resultado = numero1 - numero2;
             break;
 
         case "*":
-
+            resultado = numero1 * numero2;
             break;
+            
         case "/":
             if (numero2 === 0) {
                 console.log('Não é possível dividir por 0')
