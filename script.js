@@ -26,11 +26,13 @@ function calcular(){
     
     switch(operacao){
         case "+":
-
+            resultado = numero1 + numero2; 
             break;
+
         case "-":
-
+            resultado = numero1 - numero2;
             break;
+            
         case "*":
 
             break;
