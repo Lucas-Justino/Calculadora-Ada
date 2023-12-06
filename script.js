@@ -30,15 +30,20 @@ function calcular(){
             break;
 
         case "-":
-            resultado = numero1 - numero2;
             break;
-            
+
         case "*":
 
             break;
         case "/":
+            if (numero2 === 0) {
+                console.log('Não é possível dividir por 0')
+                return; //isso aqui vai fazer com que a função se encerre caso tente uma divisão por 0.
+            } 
 
+            resultado = numero1 / numero2;
             break;
+
         case "%":
 
             break;
