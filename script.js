@@ -60,7 +60,8 @@ function calcular(){
             break;
 
         case "%":
-
+            resultado = (numero1 / 100) * numero2;
+           
             break;
         case "LOG":
 
