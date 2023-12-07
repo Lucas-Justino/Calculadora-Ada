@@ -8,7 +8,7 @@ function lerNumero(){
 }
 
 function lerOperacao(){
-    let operacao = prompt("Digite a operação: '+', '-', '*', '/', '%', 'LOG', 'RAIZ'");
+    let operacao = prompt("Digite a operação: '+', '-', '*', '/', '%', 'LOG', 'RAIZ', 'EXP'");
     const operacoesValidas = ['+', '-', '*', '/', '%', 'LOG', 'RAIZ'];
 
     while (!operacoesValidas.includes(operacao)) { //SE ACASO A OPERACAO LIDA NÃO ESTIVER DENTRO DAS OPERAÇÕES VÁLIDAS, REPETE A LEITURA DA OPERAÇÃO
@@ -68,6 +68,8 @@ function calcular(){
         case "RAIZ":
             resultado = Math.sqrt(numero1);
             break;
+        case "EXP":
+
         default:
             console.log("Operacao Inválida");
             break;
