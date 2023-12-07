@@ -60,13 +60,13 @@ function calcular(){
             break;
 
         case "%":
-
+            resultado = numero1 % numero2;
             break;
         case "LOG":
-
+            resultado = Math.log(numero2) / Math.log(numero1);
             break;
         case "RAIZ":
-
+            resultado = Math.sqrt(numero1);
             break;
         default:
             console.log("Operacao Inválida");
