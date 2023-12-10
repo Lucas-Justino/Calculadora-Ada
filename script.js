@@ -9,7 +9,7 @@ function lerNumero(){
 
 function lerOperacao(){
     let operacao = prompt("Digite a operação: '+', '-', '*', '/', '%', 'LOG', 'RAIZ', 'EXP'");
-    const operacoesValidas = ['+', '-', '*', '/', '%', 'LOG', 'RAIZ'];
+    const operacoesValidas = ['+', '-', '*', '/', '%', 'LOG', 'RAIZ', 'EXP'];
 
     while (!operacoesValidas.includes(operacao)) { //SE ACASO A OPERACAO LIDA NÃO ESTIVER DENTRO DAS OPERAÇÕES VÁLIDAS, REPETE A LEITURA DA OPERAÇÃO
         operacao = prompt("Operação inválida! Digite novamente:");
@@ -70,6 +70,8 @@ function calcular(){
             resultado = Math.sqrt(numero1);
             break;
         case "EXP":
+            resultado = Math.pow(parseFloat(numero1 ), parseFloat(numero2));
+            break;
 
         default:
             console.log("Operacao Inválida");
