@@ -8,11 +8,11 @@ function lerNumero(){
 }
 
 function lerOperacao(){
-    let operacao = prompt("Digite a operação: '+', '-', '*', '/', '%', 'LOG', 'RAIZ', 'EXP'");
-    const operacoesValidas = ['+', '-', '*', '/', '%', 'LOG', 'RAIZ', 'EXP'];
+    let operacao = prompt("Digite a operação: '+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP'");
+    const operacoesValidas = ['+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP'];
 
     while (!operacoesValidas.includes(operacao)) { //SE ACASO A OPERACAO LIDA NÃO ESTIVER DENTRO DAS OPERAÇÕES VÁLIDAS, REPETE A LEITURA DA OPERAÇÃO
-        operacao = prompt("Operação inválida! Digite novamente:");
+        operacao = prompt("Operação inválida! Digite novamente: '+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP'");
     }
 
     return operacao;
@@ -34,23 +34,27 @@ function escreverOperacao(numero1, operacao, numero2, resultado) {
 function calcular(){
     let numero1 = lerNumero();
     let operacao = lerOperacao();
-    let numero2 = lerNumero();
+    let numero2 = "";
     let resultado;
     
     switch(operacao){
         case "+":
+            numero2 = lerNumero();
             resultado = numero1 + numero2; 
             break;
 
         case "-":
+            numero2 = lerNumero();
             resultado = numero1 - numero2;
             break;
 
         case "*":
+            numero2 = lerNumero();
             resultado = numero1 * numero2;
             break;
             
         case "/":
+            numero2 = lerNumero();
             if (numero2 === 0) {
                 console.log('Não é possível dividir por 0')
                 return; //isso aqui vai fazer com que a função se encerre caso tente uma divisão por 0.
@@ -60,16 +64,20 @@ function calcular(){
             break;
 
         case "%":
+            numero2 = lerNumero();
             resultado = (numero1 / 100) * numero2;
-           
+            break;  
+            
+        case "LN":
+            resultado = Math.log(numero1);
             break;
-        case "LOG":
-            resultado = Math.log(numero2) / Math.log(numero1);
-            break;
+
         case "RAIZ":
             resultado = Math.sqrt(numero1);
             break;
+            
         case "EXP":
+            numero2 = lerNumero();
             resultado = Math.pow(parseFloat(numero1 ), parseFloat(numero2));
             break;
 
@@ -77,7 +85,7 @@ function calcular(){
             console.log("Operacao Inválida");
             break;
     }
-
+    
     escreverOperacao(numero1, operacao, numero2, resultado)
     return resultado;
 }
