@@ -8,11 +8,11 @@ function lerNumero(){
 }
 
 function lerOperacao(){
-    let operacao = prompt("Digite a operação: '+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP', 'TRIG'");
-    const operacoesValidas = ['+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP', 'TRIG'];
+    let operacao = prompt("Digite a operação: '+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP', 'TRIG', 'MEDIA'");
+    const operacoesValidas = ['+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP', 'TRIG', 'MEDIA'];
 
     while (!operacoesValidas.includes(operacao)) { //SE ACASO A OPERACAO LIDA NÃO ESTIVER DENTRO DAS OPERAÇÕES VÁLIDAS, REPETE A LEITURA DA OPERAÇÃO
-        operacao = prompt("Operação inválida! Digite novamente: '+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP', 'TRIG'");
+        operacao = prompt("Operação inválida! Digite novamente: '+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP', 'TRIG'. 'MEDIA'");
     }
 
     return operacao;
@@ -113,6 +113,11 @@ function calcular(){
             operacao = retorno.operacao; 
             escreverOperacao(operacao, numero1, "", resultado);
             return;
+
+        case 'MEDIA':
+            numero2 = lerNumero();
+            resultado = (numero1 + numero2) / 2;
+            break;
 
         default:
             console.log("Operacao Inválida");
