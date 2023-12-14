@@ -114,13 +114,13 @@ function calcular(){
             escreverOperacao(operacao, numero1, "", resultado);
             return;
 
-        case 'MEDIA':
+        case "MEDIA":
             numero2 = lerNumero();
             resultado = (numero1 + numero2) / 2;
             break;
 
         default:
-            console.log("Operacao Inválida");
+            console.log("Operação Inválida");
             break;
     }
     
