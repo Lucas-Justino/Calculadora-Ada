@@ -8,16 +8,42 @@ function lerNumero(){
 }
 
 function lerOperacao(){
-    let operacao = prompt("Digite a operação: '+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP'");
-    const operacoesValidas = ['+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP'];
+    let operacao = prompt("Digite a operação: '+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP', 'TRIG'");
+    const operacoesValidas = ['+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP', 'TRIG'];
 
     while (!operacoesValidas.includes(operacao)) { //SE ACASO A OPERACAO LIDA NÃO ESTIVER DENTRO DAS OPERAÇÕES VÁLIDAS, REPETE A LEITURA DA OPERAÇÃO
-        operacao = prompt("Operação inválida! Digite novamente: '+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP'");
+        operacao = prompt("Operação inválida! Digite novamente: '+', '-', '*', '/', '%', 'LN', 'RAIZ', 'EXP', 'TRIG'");
     }
 
     return operacao;
 }
 
+function trigonometria(numero1){
+    let operacao = prompt("Digite a função trigonométrica que você quer: 'SEN', 'COS', 'TAN'")
+    const operacoesValidas = ['SEN', 'COS', 'TAN'];
+
+    while(!operacoesValidas.includes(operacao)){
+        operacao = prompt("Operação Inválida! Digite a função trigonométrica que você quer: 'SEN', 'COS', 'TAN'")
+    }
+
+    numero1 = numero1 * Math.PI / 180;
+
+    switch(operacao){
+        case "SEN":
+            return {resultado: Math.sin(numero1), operacao: "SEN"};
+        
+        case "COS":
+            return {resultado: Math.cos(numero1), operacao: "COS"}; 
+
+        case "TAN":
+            return {resultado: Math.tan(numero1), operacao: "TAN"};
+
+        default:
+            alert("Operação Inválida");
+            break;
+    }
+
+}
 
 //função criada para aparecer os valores e resultado no corpo da página, ficando mais fácil a visualização 
 // e evitando usar o CONSOLE para visualização do cálculo
@@ -81,6 +107,13 @@ function calcular(){
             resultado = Math.pow(parseFloat(numero1 ), parseFloat(numero2));
             break;
 
+        case "TRIG":
+            let retorno = trigonometria(numero1);
+            resultado = retorno.resultado;
+            operacao = retorno.operacao; 
+            escreverOperacao(operacao, numero1, "", resultado);
+            return;
+
         default:
             console.log("Operacao Inválida");
             break;
@@ -90,4 +123,4 @@ function calcular(){
     return resultado;
 }
 
-console.log(calcular());
+console.log(calcular()); 
